@@ -1,4 +1,14 @@
 importers:
+  packages/resolvers:
+    dependencies:
+      graphql-tag: 2.10.2
+    devDependencies:
+      rimraf: 3.0.1
+      typescript: 3.7.5
+    specifiers:
+      graphql-tag: ^2.10.2
+      rimraf: ^3.0.1
+      typescript: ^3.7.5
   packages/server:
     dependencies:
       '@satek/validations': 'link:../validations'
@@ -5896,6 +5906,12 @@ packages:
       graphql: ^0.10.5 || ^0.11.3 || ^0.12.0 || ^0.13.0 || ^14.0.0
     resolution:
       integrity: sha512-6WzlBFC0lWmXJbIVE8OgFgXIP4RJi3OQgTPa0DVMsDXdpRDjTsM1K9wfl5HSYX7R87QAGlvcv2Y4BIZa/ItonA==
+  /graphql-tag/2.10.2:
+    dev: false
+    peerDependencies:
+      graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0
+    resolution:
+      integrity: sha512-7rUuJkVGyedBiVJ/hPaxndDnzxANUZ+QhTu0KUzgTGtP3ibY/hSUl9em21aVh5BNMJsmMc4nVuOTBoiAUJ2xBQ==
   /graphql-tag/2.10.2_graphql@14.6.0:
     dependencies:
       graphql: 14.6.0

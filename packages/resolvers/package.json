@@ -4,9 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pnpm run build:types && rimraf ./dist && tsc",
+    "build:schema": "apollo client:download-schema --endpoint=http://localhost:4000/graphql",
+    "build:types": "apollo client:codegen --endpoint=http://localhost:4000/graphql --target=typescript --outputFlat=./src/types.ts",
+    "build:schema:types": "pnpm run build:schema && pnpm run build:types"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "graphql-tag": "^2.10.2"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.1",
+    "typescript": "^3.7.5"
+  }
 }
