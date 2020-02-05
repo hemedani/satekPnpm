@@ -1,0 +1,22 @@
+{
+  "name": "@satek/validations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf ./dist && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/yup": "^0.26.29",
+    "rimraf": "^3.0.1",
+    "typescript": "^3.7.5",
+    "yup": "^0.28.1"
+  },
+  "peerDependencies": {
+    "yup": "^0.28.1"
+  }
+}
