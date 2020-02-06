@@ -1,8 +1,9 @@
 {
-  "name": "resolvers",
+  "name": "@satek/resolvers",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "pnpm run build:types && rimraf ./dist && tsc",
     "build:schema": "apollo client:download-schema --endpoint=http://localhost:4000/graphql",
