@@ -1,0 +1,36 @@
+ 
+.monitor-animationecg  
+    padding: 0;
+    max-width: 4rem;
+    border-radius: 5px;  
+.monitor-animationecg svg 
+	max-width: 3rem;
+	margin-left: 20px; 
+	position: relative;
+	transition: all 0.5s ease-in-out;
+.monitor-animationecg svg .ekg-animationecg 
+	fill: none;
+	stroke: red;
+	stroke-width: 0.7rem;
+	stroke-linecap: round;
+	stroke-linejoin: miter;
+	opacity: 0;
+	stroke-dashoffset: 1000;
+	stroke-dasharray: 1000;
+	animation: ekg-animationecg 1.6s linear forwards infinite;
+
+@keyframes ekg-animationecg 
+    0% 
+        opacity: 0;
+    25% 
+        opacity: 1;
+    50% 
+        stroke-dashoffset: 2000;
+    99% 
+        opacity: 0;
+        stroke-dashoffset: 3000;
+    100% 
+        stroke-dashoffset: 1000;
+    
+
+

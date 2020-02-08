@@ -1,0 +1,116 @@
+.rectangle_item_cnt
+  display flex
+  flex-direction column
+  width 31%
+  border-radius .5rem
+  margin 0.5%
+  height 5rem
+  padding .9rem .25rem
+  box-shadow 0 0 2px black
+  .section_with_image
+    display flex
+    .img
+      border-radius 50%
+      height 3.7rem
+      border 1px solid gray
+      width 3.7rem
+    .details
+      display flex
+      flex-direction column
+      margin-right .5rem
+      .header_one
+        display flex
+        font-family FontMedium
+        margin-bottom .5rem
+        font-size .8rem
+      .header_two
+        display flex
+        font-family FontDefault
+        color $grayLight
+        margin-bottom .5rem
+        font-size .7rem
+      .header_three
+        display flex
+        font-family FontDefault
+        color $grayLight
+        margin-bottom .5rem
+        font-size .7rem
+      .header_one
+      .header_two
+      .header_three
+        & > :last-child
+          margin 0 .5rem
+        .icon:before
+            color $blueLight
+            margin-left .2rem
+  .btns
+    display flex
+    flex 1
+    justify-content flex-end
+    margin 0 .5rem
+    .btn
+      font-size .7rem
+      padding .4rem 1rem
+      margin 0 .2rem
+// -----------------------------GOODFIELD
+.rectangle_item_cnt.good
+  padding-bottom: .5rem
+  .details
+    .header_two
+      font-family FontLight
+      font-size .55rem
+    .header_three
+      color $blueLight
+      font-family FontMedium
+      font-size .5rem
+      & > :last-child
+        margin-right 3.5rem
+  .btns
+    display: flex
+    align-items baseline
+    .btn
+      padding: .3rem 1rem
+    .cost_box
+      display flex
+      width 100%
+      align-items baseline
+      font-family FontMedium
+      .pre_cost
+        margin-left: 1rem
+        font-size .6rem
+        color $grayDark
+      .cost
+        font-size .7rem
+        color $grayDark
+        letter-spacing .2rem
+        padding 0.2rem .4rem
+        background-color #efefef
+        box-shadow 0 0 1px 0px black
+      .past_cost
+        margin 0 .3rem
+        font-size .5rem
+        color $grayLight
+// -----------------------------USER
+.rectangle_item_cnt.user
+  padding-bottom: 1.2rem
+  .details
+    flex: 1
+    .header_one
+      display: flex
+      align-items baseline
+      justify-content: space-between
+    .ic_calender:before
+      cursor pointer
+  .btns
+    display: flex
+    align-items baseline
+    justify-content: space-between
+    .phone
+      .text
+        font-family FontDefault
+        color $grayLight
+        font-size .65rem
+        margin-left .5rem
+      .number
+        font-size .8rem
+        font-family FontDefault

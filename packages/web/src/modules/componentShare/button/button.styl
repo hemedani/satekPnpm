@@ -1,0 +1,193 @@
+a
+  text-decoration none
+.btn-link
+  display flex
+  align-items: center
+.btn-main
+  display flex
+  align-items center
+  font-family FontMedium
+  background-color $blueDark
+  color #fff
+  border none
+  border-radius 0.2rem
+  cursor pointer
+  transition-duration 0.3s
+  &:hover
+    background-color $violet
+    transition-duration 0.3s
+    border none
+  &:active
+    box-shadow 0 0 .5rem $violet
+    transition-delay 0s
+
+  &.center
+    justify-content: center
+
+.btn-addRequest
+  font-family FontMedium
+  background-image linear-gradient(to bottom left, $violet, $blueDark)
+  color #fff
+  border none
+  border-radius 0.2rem
+  cursor pointer
+  transition-duration 0.5s
+  &:hover
+    background-image linear-gradient(to bottom left, $blueDark, $violet)
+    transition-duration 0.5s
+    border none
+  &:active
+    box-shadow 0 0 .5rem $blueDark
+    transition-delay 0s
+
+.btn-sendReq
+  font-family FontMedium
+  background-image linear-gradient(-90deg, $greenLight, #10c327)
+  color #fff
+  border none
+  border-radius 0.2rem
+  cursor pointer
+  transition-duration 0.5s
+  &:hover
+    background-image linear-gradient(-90deg, #10c327, $greenLight)
+    transition-duration 0.5s
+    border none
+  &:active
+    box-shadow 0 0 .5rem #10c327
+    transition-delay 0s
+
+.btn-disable
+  font-family FontMedium
+  background-color $grayLight
+  color #fff
+  border none
+  border-radius 0.2rem
+  cursor default
+  transition-duration 0.5s
+
+.btn-extra
+  font-family FontMedium
+  background-color white
+  color $blueDark
+  border none
+  border-radius 0.2rem
+  cursor pointer
+  border .05rem $blueDark solid
+  transition-duration 0.3s
+  &:hover
+    background-color $blueDark
+    border .05rem $blueDark solid
+    color white
+    transition-duration 0.3s
+  &:active
+    box-shadow 0 0 .5rem $blueDark
+
+.btn-cancel
+  font-family FontMedium
+  background-color white
+  color $red
+  border none
+  border-radius 0.2rem
+  cursor pointer
+  box-shadow 0 0 .1rem black
+  transition-duration 0.3s
+  &:hover
+    background-color $red
+    color white
+    transition-duration 0.3s
+    border none
+  &:active
+    box-shadow 0 0 .5rem $red
+    transition-delay 0s
+
+.btn-okay
+  font-family FontMedium
+  background-color white
+  color $blueDark
+  border none
+  border-radius 0.2rem
+  cursor pointer
+  box-shadow 0 0 .1rem black
+  transition-duration 0.3s
+  &:hover
+    background-color $blueDark
+    color white
+    transition-duration 0.3s
+    border none
+  &:active
+    box-shadow 0 0 .5rem $blueDark
+    transition-delay 0s
+
+.btn-yellowBtn
+  font-family FontMedium
+  background-color $yellow
+  color black
+  border none
+  border-radius 0.2rem
+  cursor pointer
+  transition-duration 0.3s
+  &:active
+    box-shadow 0 0 .05rem $yellow
+    transition-delay 0s
+.btn-accept
+  font-family FontMedium
+  background-color white
+  color $greenLight
+  border none
+  border-radius 0.2rem
+  cursor pointer
+  box-shadow 0 0 .1rem black
+  transition-duration 0.3s
+  &:hover
+    background-color $greenLight
+    color white
+    transition-duration 0.3s
+    border none
+  &:active
+    box-shadow 0 0 .5rem $greenLight
+    transition-delay 0s
+
+.btn-redCancel 
+  transition-duration 0.3s
+  font-family FontMedium
+  background-color $red
+  color #fff 
+  border none
+  border-radius 0.2rem
+  cursor pointer 
+  transition-duration 0.3s
+  &:hover
+    background-color #bf4040
+    color white
+    transition-duration 0.3s
+    border none
+  &:active
+    box-shadow 0 0 .5rem #d27979
+    transition-delay 0s
+.btn-gray 
+  transition-duration 0.3s
+  font-family FontMedium
+  background-color white
+  // box-shadow 0 0 .3rem $grayLight
+  color $grayLight
+  border $grayLight solid 1px
+  border-radius 0.2rem
+  cursor pointer 
+  transition-duration 0.3s
+  &:hover
+    background-color $grayDark
+    color white
+    transition-duration 0.3s
+    border none
+  &:active
+    box-shadow 0 0 .5rem $grayLight
+    transition-delay 0s
+.animation-Button&:active
+  animation-name: animationButton;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+
+@keyframes animationButton 
+  0%   {background-color: red}
+  50%  {background-color: yellow}
+  100% {background-color: red }

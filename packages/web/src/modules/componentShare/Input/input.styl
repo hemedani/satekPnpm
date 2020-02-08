@@ -1,0 +1,53 @@
+.close-icon-input
+    height 1rem
+    width 1rem
+    margin-left: 0.1rem
+    cursor: pointer
+    background-color:white
+    border-radius: 50%
+    border: 1px solid transparent
+    display: flex
+    align-items: center
+    justify-content: center
+.input-cnt
+    font-family FontDefault
+    display flex
+    align-items center
+    justify-content space-around
+    .cnt
+      flex : 1
+    .search-wrapper
+      display: flex
+      align-items: center
+      border-radius: 0.15rem
+      box-shadow: 0 0 0.15rem $violet;
+  .input-cnt.medium
+    .title
+      font-family FontMedium
+      color $grayDark
+      margin 0
+      font-size 0.8rem
+      width 5rem
+    .input
+        width 100%
+        font-family FontLight
+        flex 1
+        border-radius 0.2rem
+        padding .3rem .5rem
+        border 0px solid $violet
+        box-shadow 0 0 .15rem $violet
+        margin-left: 0.5rem
+      ::placeholder
+        font-family FontDefault
+        font-size 0.7rem
+        color $grayLight
+    .clear-input
+        border: none
+        box-shadow unset
+.size-icon-input
+    color $grayLight
+    font-size: 0.5rem
+.size-icon-input:hover
+    color $grayDark
+.clear-input::not(:valid)
+	display: none;

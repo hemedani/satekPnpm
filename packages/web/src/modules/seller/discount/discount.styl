@@ -1,0 +1,42 @@
+.discount-container-main
+    display: flex
+    flex-flow: column wrap
+    width: 80%
+    margin:0 auto
+
+.input-container 
+    margin-top: DimenMedium
+
+    .discount-box
+        display: flex
+        flex: 1
+        max-width 80%
+        flex-flow: column wrap-reverse
+        justify-content: space-around
+        padding: 1rem
+        
+        .discount-input-box 
+            display: flex
+            flex-wrap: wrap
+            justify-content space-between
+            margin: DimenMedium 0
+
+            // TODO: Mahdi Hoseini <5sep>: This logic shold fix later
+            & > * 
+                display flex
+                align-items: center
+
+.result-box
+    padding: 0 2rem
+
+    & > *
+        margin-top 1rem
+        display: flex
+
+    & > *:last-child
+        margin-bottom 1rem
+
+.discount-info-box
+    color $grayDark
+    font-family FontDefault
+    font-size: fs

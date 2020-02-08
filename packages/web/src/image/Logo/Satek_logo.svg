@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48.009" height="48" viewBox="0 0 48.009 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a2a2c3" stop-opacity="0.949"/>
+      <stop offset="0.3" stop-color="#bcbcd4" stop-opacity="0.678"/>
+      <stop offset="0.98" stop-color="#fdfdfe" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Satek_logo" transform="translate(0 1.35)">
+    <g id="Layer_2" data-name="Layer 2" transform="translate(0 -1.35)">
+      <g id="Layer_1" data-name="Layer 1" transform="translate(0 0)">
+        <circle id="Ellipse_79" data-name="Ellipse 79" cx="6.879" cy="6.879" r="6.879" transform="translate(17.125 34.241)" fill="#a2a2c3" opacity="0.95"/>
+        <circle id="Ellipse_80" data-name="Ellipse 80" cx="6.879" cy="6.879" r="6.879" transform="translate(0 17.125)" fill="#f5f5fb" opacity="0.95"/>
+        <path id="Path_425" data-name="Path 425" d="M315.207,5.529V15.775H301.45V5.529a6.879,6.879,0,1,1,13.757,0Z" transform="translate(-284.324 1.35)" fill="#a2a2c3" opacity="0.95"/>
+        <path id="Path_426" data-name="Path 426" d="M332.333,306.969a6.9,6.9,0,0,1-6.878,6.879H315.207L301.45,300.09h24.006A6.893,6.893,0,0,1,332.333,306.969Z" transform="translate(-284.324 -282.965)" fill="#f5f5fb" opacity="0.95"/>
+        <rect id="Rectangle_958" data-name="Rectangle 958" width="13.805" height="2.974" transform="translate(17.104 14.153)" opacity="0.5" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
+</svg>

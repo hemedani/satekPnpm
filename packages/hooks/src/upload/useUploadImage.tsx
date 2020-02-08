@@ -11,15 +11,30 @@ type SetValue = (
   shouldValidate?: boolean
 ) => void | Promise<boolean>;
 
+export type DropEvent =
+  | React.DragEvent<HTMLElement>
+  | React.ChangeEvent<HTMLInputElement>
+  | DragEvent
+  | Event;
+
 export function useUploadImage(setValue?: SetValue, fieldName?: string) {
   const [uploadImageMutate] = useMutation(GQL_IMAGE_UPLOAD);
   const [img, setImg] = useState("");
   const [err, setErr] = useState("");
   const onDrop = useCallback(
-    async ([image]) => {
+    async <T extends File>(
+      acceptedFiles: T[],
+      rejectedFiles: T[],
+      event: DropEvent
+    ) => {
       const { data } = await uploadImageMutate({
-        variables: { image }
+        variables: { image: acceptedFiles[0] }
       });
+      console.group("event");
+      console.log(event);
+      console.log("rejectedFiles", rejectedFiles);
+      console.groupEnd();
+
       if (data && data.imageUpload && data.imageUpload.url) {
         setImg(data.imageUpload.url);
         if (setValue && fieldName) {

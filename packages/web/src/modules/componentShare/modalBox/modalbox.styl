@@ -1,0 +1,90 @@
+.Modal-ModalBox
+    display none
+    position absolute
+    z-index 1
+    width 100%
+    height 100%
+    overflow auto
+    background-color rgb(0,0,0)
+    background-color rgba(0,0,0,0.4)
+.modal-content-ModalBox
+    background-color #fefefe
+    height 60%
+    z-index 2
+    border-radius 0.5rem 
+    position absolute
+    border 1px solid #888
+    width 60%
+    display flex
+    flex-direction column
+    min-height 23rem
+    @media only screen and (max-width: 660px)  
+        width :95%
+        height 92%
+.modal-content-ModalBox-medium-size
+    width 75%
+    height 70%
+    min-height 28rem
+    @media only screen and (max-width: 660px)  
+        width :95%
+        height 92%
+.modal-content-ModalBox-large-size
+    width 75%
+    min-height 32rem
+    height 80%
+    @media only screen and (max-width: 660px)  
+        width :95%
+        height 92%
+.head-ModalBox
+    display flex
+    align-items center
+    height: 4rem
+    border-radius: 0.5rem
+    justify-content center
+    min-height 1rem
+    background-color:$white
+.headContainer-ModalBox
+    width 100%
+    padding 0 1.5rem 0 1.5rem
+    display flex
+    direction: rtl
+    justify-content space-between
+.notification-head-ModalBox
+    display flex
+.circle-box-icon-ModalBox
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor pointer 
+    border: 1px solid $red
+    border-radius: 50%
+    width:1.5rem 
+    background-color: $red
+    color:$red
+    height 1.5rem
+.circle-box-icon-ModalBox:hover
+    background-color: white
+    border:none
+    color:$white
+    .closeIcon-ModalBox
+        color: $red
+.text-head-ModalBox
+    font-family FontBold
+    margin 0 0.5rem 0 0
+.closeIcon-ModalBox 
+    font-size: 1.3rem
+    color: white
+.modal
+    display flex
+    top 0
+    left 0
+    position absolute
+    z-index 1
+    bottom 0
+    right 0 
+    background-color rgba(0,0,0,0.4)
+    width 100%
+    height 100%
+    justify-content center
+    align-items center
+    position fixed
