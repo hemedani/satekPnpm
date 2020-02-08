@@ -10,6 +10,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@satek/hooks": "workspace:^1.0.0",
+    "@satek/resolvers": "workspace:^1.0.0",
     "react": "16.9.0",
     "react-native": "0.61.5"
   },
