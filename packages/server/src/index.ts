@@ -25,7 +25,7 @@ if (process.env.DB_RECREATE) {
   console.log("start server without authentication....");
   deactiveAuthentication = true;
   userRole_deactiveAuthentication = Object.values(UserRole)[
-    parseInt(process.env.AUTH_FREE)
+    parseInt(process.env.AUTH_FREE) - 1
   ] as UserRole;
   console.log(
     "start server without authentication....\n log in as " +
