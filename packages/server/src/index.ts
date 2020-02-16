@@ -1,7 +1,7 @@
+import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import Express from "express";
 import path from "path";
-import "reflect-metadata";
 import { buildSchema } from "type-graphql";
 import { createTypeormConnection } from "./utils/createTypeormConnection";
 import cors from "cors";
@@ -10,24 +10,29 @@ import { UserRole } from "./entity/UserToSite";
 
 const PORT = process.env.PORT || 4000;
 let deleteAndRecreateDB = false;
-export let deactiveAuthentication = false
+export let deactiveAuthentication = false;
 export let userRole_deactiveAuthentication: UserRole = UserRole.Normal;
 let exit = false;
 
-process.argv.map((val, index, array) => {
-    //console.log(index + ': ' + val+" ********* "+array);
-    if (val === "--c") {
-        console.log("start server with dropping schema and re-create DB....");
-        deleteAndRecreateDB = true;
-    }
-    else if (val === "--d") {
-        console.log("start server without authentication....");
-        deactiveAuthentication = true;
-        userRole_deactiveAuthentication = Object.values(UserRole)[parseInt(array[index + 1])-1] as UserRole;
-        console.log("start server without authentication....\n log in as "+ userRole_deactiveAuthentication);
-    }
-    else if (val === "--h") {
-        console.log(`you can use these options to run server with different modes:\n
+console.group("process.env");
+console.log(process.env.DB_RECREATE);
+console.groupEnd();
+
+if (process.env.DB_RECREATE) {
+  console.log("start server with dropping schema and re-create DB....");
+  deleteAndRecreateDB = true;
+} else if (process.env.AUTH_FREE) {
+  console.log("start server without authentication....");
+  deactiveAuthentication = true;
+  userRole_deactiveAuthentication = Object.values(UserRole)[
+    parseInt(process.env.AUTH_FREE)
+  ] as UserRole;
+  console.log(
+    "start server without authentication....\n log in as " +
+      userRole_deactiveAuthentication
+  );
+} else if (process.env.HELP) {
+  console.log(`you can use these options to run server with different modes:\n
         --h: get help for different modes
         --c: drop schema and recreate database with generated data(testing porpuse)
         --d: deActivate authentication for testing queries easily
@@ -48,56 +53,57 @@ process.argv.map((val, index, array) => {
         \t15:====> Accountant
         \t16:====> Minister
         \n`);
-        console.log(`usage: "yarn start --d [1]" to login without authentication as [Master]\n\n`)
-        exit = true;
-    }
-});
+  console.log(
+    `usage: "yarn start --d [1]" to login without authentication as [Master]\n\n`
+  );
+  exit = true;
+}
+
 async function bootstrap() {
-    const conn = await createTypeormConnection(deleteAndRecreateDB);
-    await conn.runMigrations();
-    if (deleteAndRecreateDB) {
-        await createData();
-    }
+  const conn = await createTypeormConnection(deleteAndRecreateDB);
+  await conn.runMigrations();
+  if (deleteAndRecreateDB) {
+    await createData();
+  }
 
-    // ... Building schema here
-    const schema = await buildSchema({
-        resolvers: [__dirname + "/modules/**/*.resolver.ts"]
-        // resolvers: [RegisterResolver, MeResolver],
-        // authChecker: customAuthChecker
-    });
+  // ... Building schema here
+  const schema = await buildSchema({
+    resolvers: [__dirname + "/modules/**/*.resolver.ts"]
+    // resolvers: [RegisterResolver, MeResolver],
+    // authChecker: customAuthChecker
+  });
 
-    // Create the GraphQL server
-    const apolloServer = new ApolloServer({
-        schema,
-        context: ({ req }) => ({ req }),
-        introspection: true
-    });
+  // Create the GraphQL server
+  const apolloServer = new ApolloServer({
+    schema,
+    context: ({ req }) => ({ req }),
+    introspection: true
+  });
 
-    const app = Express();
+  const app = Express();
 
-    const corsOptions = {
-        origin: process.env.FRONTEND_URL,
-        credentials: true // <-- REQUIRED backend setting
-    };
-    app.use(cors(corsOptions));
+  const corsOptions = {
+    origin: process.env.FRONTEND_URL,
+    credentials: true // <-- REQUIRED backend setting
+  };
+  app.use(cors(corsOptions));
 
-    app.use("/files", Express.static(path.join(__dirname, "/../files")));
+  app.use("/files", Express.static(path.join(__dirname, "/../files")));
 
-    apolloServer.applyMiddleware({
-        app,
-        cors: false
-    });
+  apolloServer.applyMiddleware({
+    app,
+    cors: false
+  });
 
-    // Start the server
-    app.listen(PORT);
-    console.log(
-        `GraphQL Playground available at http://localhost:${PORT}${apolloServer.graphqlPath}`
-    );
+  // Start the server
+  app.listen(PORT);
+  console.log(
+    `GraphQL Playground available at http://localhost:${PORT}${apolloServer.graphqlPath}`
+  );
 }
 
 if (exit === false) {
-    bootstrap();
-}
-else {
-    console.log("please CTRL+C to getting back to commandline");
+  bootstrap();
+} else {
+  console.log("please CTRL+C to getting back to commandline");
 }
