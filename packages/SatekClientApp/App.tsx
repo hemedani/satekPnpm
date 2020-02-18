@@ -25,7 +25,6 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import MyFontIcon from 'MyFontIcon';
 
 declare var global: {HermesInternal: null | {}};
 
@@ -49,7 +48,6 @@ const App = () => {
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.tsx</Text> to change
                 this screen and then come back to see your edits.
-                <MyFontIcon></MyFontIcon>
               </Text>
             </View>
             <View style={styles.sectionContainer}>

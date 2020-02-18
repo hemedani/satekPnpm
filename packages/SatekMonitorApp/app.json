@@ -1,4 +1,5 @@
 {
   "name": "SatekMonitorApp",
-  "displayName": "SatekMonitorApp"
+  "displayName": "SatekMonitorApp",
+  "config": "rn-cli.config.js"
 }
